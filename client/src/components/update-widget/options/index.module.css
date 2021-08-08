@@ -1,0 +1,208 @@
+.container {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	background: #f9f9f9;
+	padding: 1rem 2rem;
+    height: 100vh;
+	max-width: 35vw;
+	position: fixed;
+	right: 0%;
+}
+.header {
+	display: flex;
+	justify-content: space-between;
+}
+.body {
+	display: flex;
+    flex: 1;
+    min-height: 0;
+}
+.boxes__wrapper::-webkit-scrollbar {
+	width: 5px !important;
+}
+
+.boxes__wrapper::-webkit-scrollbar-track {
+	background-color: #f0f3f5 !important;
+}
+
+.boxes__wrapper::-webkit-scrollbar-thumb {
+	background-color: #CECECE !important;
+	border-radius: 20px;
+}
+.left {
+	display: flex;
+	align-items: center;
+}
+.right {
+	display: flex;
+	align-items: center;
+}
+.item {
+	margin: 0 0.7rem;
+}
+.badge {
+	height: 5vh;
+	width: 5vh;
+	max-height: 6vh;
+	max-width: 6vh;
+	overflow: hidden;
+	border-radius: 50%;
+	border: 2px solid var(--primary);
+}
+.avatar {
+	width: 100%;
+	height: auto;
+}
+.avatar__link {
+	border-radius: 50%;
+	padding: 0rem 1rem;
+}
+.badge__circle {
+	cursor: pointer;
+}
+.nav__icon {
+	margin: 0 0.7rem;
+	color: #9d9d9d;
+	font-size: 1.3rem;
+	cursor: not-allowed;
+}
+.nav__icon__active{
+	cursor: pointer;
+	margin: 0 0.7rem;
+	color: var(--primary);
+	font-size: 1.3rem;
+}
+
+.save__btn {
+	margin: 0 0.7rem;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	background: #00dd8d;
+	box-shadow: -1px 3px 18px rgba(0, 221, 141, 0.34);
+	border-radius: 6px;
+	outline: none;
+	border: none;
+	color: #fff;
+}
+.save__btn:hover {
+	background: #03ce84;
+}
+
+.boxes__wrapper {
+	flex: 1;
+	min-height: 0;
+	margin-bottom: 1rem;
+	overflow: auto;
+}
+.boxes {
+	height: 30vh;
+	background: #00dd8d;
+	width: 100%;
+	margin: 10px auto;
+}
+.tutorial__video {
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 1.5rem;
+	margin-bottom: 1rem;
+	background: #f3f3f3;
+	border-radius: 8px;
+}
+.tutorial__video__icon__wrapper {
+	flex: 0.15;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.tutorial__video__icon {
+	font-size: 2.2rem;
+	color: var(--secondary);
+}
+.tutorial__video__text {
+	color: #5f5f5f;
+    flex: 0.85;
+}
+
+.body__title{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.disccord__icon__wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 6px;
+}
+.discord__icon{
+    color: #7289DA;
+}
+.body__footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: #f3f3f3;
+	border-radius: 8px;
+    color: #5F5F5F;
+    margin-top: 1rem;
+
+}
+.spacer__container {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	background: #f9f9f9;
+	padding: 1rem 2rem;
+    min-height: 100vh;
+	max-width: 35vw;
+}
+/* @media(min-width:768px) and (max-width:1540px){
+	.boxes__wrapper {
+		flex: 1;
+		min-height: 0;
+		overflow: auto;
+	}
+}
+@media(min-width:1541px){
+	.boxes__wrapper {
+		flex: 1;
+		min-height: 0;
+		overflow: auto;
+	}
+} */
+.profile__menu{
+    top: 12%;
+    background: #fff;
+    position: absolute;
+	transform:translate(23%,38%);
+    right: 0%;
+	box-shadow: -1px 3px 43px rgba(173, 173, 173, 0.26);
+	min-width: 135px;
+
+}
+.profile__menu__link{
+	padding:0.6rem 2rem;
+	color: var(--light-primary);
+	font-size: 1rem;
+	cursor: pointer;
+	width: 100%;
+	text-align: center;
+}
+.profile__menu__link:hover{
+	color: var(--primary);
+	background-color: #f5f5f5;
+}
+@media (max-width: 768px) {
+	.spacer__container {
+		display: none;
+	}
+	.container {
+		position:unset;
+		max-width:unset;
+		padding: 1rem;
+	}
+}

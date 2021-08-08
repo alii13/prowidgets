@@ -1,0 +1,23 @@
+.footer{
+	background-color: var(--light-white);
+    height: 9vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text{
+    display: flex;
+    font-size: 1.1rem;
+    color:#5F5F5F;
+
+}
+.footer__icon{
+    color: var(--secondary);
+    margin-left: 5px;
+    font-size: 1.8rem;
+}
+.footer__icon__wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

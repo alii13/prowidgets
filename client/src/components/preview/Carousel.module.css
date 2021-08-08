@@ -1,0 +1,13 @@
+.container {
+	/* padding: calc(2vw + 1em); */
+	display: flex;
+	flex-direction: column;
+    height: 100vh;
+}
+.resizable__container{
+	box-shadow: -1px 3px 22px rgba(173, 173, 173, 0.1);
+	display: flex;
+	align-items: center;
+    height: 100vh !important;
+    overflow: hidden;
+}

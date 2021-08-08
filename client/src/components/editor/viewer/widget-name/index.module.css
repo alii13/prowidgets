@@ -1,0 +1,20 @@
+.name__wrapper{
+
+}
+.name {
+	outline: none;
+	border: none;
+	border-bottom: 2px solid #cecece;
+	font-size: 1.8rem;
+}
+.name:focus {
+	border-bottom: 2px solid var(--secondary);
+}
+.name::placeholder {
+	color: #cecece;
+}
+@media (max-width: 768px) {
+	.name {
+		max-width: 60vw;
+	}
+}

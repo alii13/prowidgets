@@ -1,0 +1,14 @@
+.container {
+	overflow-x: hidden;
+	padding: calc(2vw + 1em);
+	min-height: 91vh;
+	display: flex;
+	flex-direction: column;
+}
+@media (max-width: 576px) {
+	.container{
+		/* margin-top: 2vh; */
+		padding: calc(1vw + 0.8em);
+		height: 100vh;
+	}
+}

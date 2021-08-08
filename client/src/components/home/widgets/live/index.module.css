@@ -1,0 +1,23 @@
+.slide__box{
+	height: 22vh;
+	border-radius: 8px;
+	width: 80%;
+	background-color: #f8f8f8;
+
+}
+.slider__item__container{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+ 
+
+}
+
+@media (max-width: 576px) {
+    .slide__box{
+        width: 90%;
+        margin: 10px 0;    
+    }
+}

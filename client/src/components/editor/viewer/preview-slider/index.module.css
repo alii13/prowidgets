@@ -1,0 +1,24 @@
+.slide__preview {
+	height: 100%;
+
+	/* margin: 2rem 0 1rem 0; */
+}
+.resizable__container {
+	background: #f3f3f3;
+	border: 2px dashed var(--light-primary);
+	box-shadow: -1px 3px 22px rgba(173, 173, 173, 0.1);
+	display: flex;
+	/* justify-content: center; */
+	align-items: center;
+	/* overflow: hidden; */
+	margin: 2rem 0 3rem 0;
+	position: absolute;
+	border-radius: 8px;
+	padding: 10px;
+}
+
+@media (max-width: 768px) {
+	.resizable__container {
+		max-width: 100vw !important;
+	}
+}

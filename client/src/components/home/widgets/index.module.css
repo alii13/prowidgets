@@ -1,0 +1,21 @@
+.container{
+    margin-top: calc(2vw + 1em);
+    /* border: 1px solid var(--primary); */
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -1px 3px 43px rgba(173, 173, 173, 0.26);
+    border-radius: 6px;
+    cursor: grab;
+    
+
+}
+@media (max-width: 576px) {
+	.container {
+        margin-top: 5vh;
+        height: 91vh;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+	}
+}

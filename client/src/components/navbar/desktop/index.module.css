@@ -1,0 +1,75 @@
+.container {
+	display: flex;
+	justify-content: center;
+	z-index: 3;
+}
+.navbar {
+	box-shadow: -1px 3px 43px rgba(173, 173, 173, 0.26);
+	border-radius: 6px;
+	padding: 1.4rem 1.8rem;
+	background-color: var(--white);
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	font-size: 1rem;
+	z-index: 3;
+}
+
+.links {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.link {
+	padding: 0.4rem 1rem;
+	font-size: 1.1rem;
+}
+.bold {
+	font-size: 1.6rem;
+	font-weight: 800;
+}
+.link__btn {
+	background: var(--secondary);
+	box-shadow: -1px 3px 18px rgba(40, 222, 222, 0.34);
+	border-radius: 6px;
+	color: var(--white);
+	margin-left: 1rem;
+	cursor: pointer;
+}
+
+.google__login__btn {
+	justify-content: center;
+	align-items: center;
+	font-size: 1.3rem !important;
+	box-shadow: -1px 3px 43px rgba(173, 173, 173, 0.26);
+	padding: 0.5rem 1rem !important;
+}
+.auth__modal{
+	min-width: 40vw;
+}
+
+.auth__div {
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.auth__div button div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.auth__text {
+	color: var(--primary);
+	font-weight: 600;
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	text-align: center;
+}
+.blue {
+	color: var(--secondary);
+	font-weight: 600;
+}

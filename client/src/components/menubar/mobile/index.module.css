@@ -1,0 +1,106 @@
+.container {
+	display: flex;
+	justify-content: center;
+	position: relative;
+	z-index: 3;	
+}
+
+.links{
+flex-direction: column;
+}
+
+.links {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+.link {
+	padding: 0.4rem 0rem;
+	font-size: 1.1rem;
+	margin: 0.6rem 0;
+}
+.bold {
+	font-size: 1.6rem;
+	font-weight: 800;
+}
+.link__btn {
+	background: var(--secondary);
+	padding: 0.4rem 1rem;
+	box-shadow: -1px 3px 18px rgba(40, 222, 222, 0.34);
+	border-radius: 6px;
+    color: var(--white);
+
+}
+
+.burger__icon{
+	color: #5F5F5F;
+	position: absolute;
+	right: 0%;
+	top: 0;
+	font-size: 1.8rem;
+}
+
+.badge{
+	height: 5vh;
+	width: 5vh;
+	max-height: 6vh;
+	max-width: 6vh;
+	overflow:hidden;
+	border-radius: 50%;
+	border: 2px solid var(--primary);
+}
+.avatar{
+	width: 100%;
+	height: auto;
+}
+.avatar__link{
+	border-radius: 50%;
+	padding: 0rem 1rem;
+	position: absolute;
+	right: 0;
+	top: 5%;
+}
+.badge__circle{
+	
+}
+.brand{
+	padding: 0.4rem 0rem;
+	font-size: 1.1rem;
+	margin: 0.6rem 0;
+}
+.google__login__btn {
+	justify-content: center;
+	align-items: center;
+	font-size: 1.3rem !important;
+	box-shadow: -1px 3px 43px rgba(173, 173, 173, 0.26);
+	padding: 0.5rem 1rem !important;
+}
+.auth__modal{
+	min-width: 35vw;
+}
+
+.auth__div {
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.auth__div button div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.auth__text {
+	color: var(--primary);
+	font-weight: 600;
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	text-align: center;
+}
+.blue {
+	color: var(--secondary);
+	font-weight: 600;
+}
