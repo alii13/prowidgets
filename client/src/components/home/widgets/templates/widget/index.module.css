@@ -1,16 +1,15 @@
-.container{
+.container {
 	display: flex;
 	height: 100%;
 	width: 100%;
 	flex-direction: column;
 	box-shadow: -1px 3px 22px rgba(173, 173, 173, 0.1);
 	border-radius: 8px;
-	border: 1px solid #F3F3F3;;
+	border: 1px solid #f3f3f3;
 	transition: all ease-in-out 0.2s;
 	cursor: pointer;
 }
-.body{
-
+.body {
 	flex: 0.8;
 	display: flex;
 	justify-content: center;
@@ -20,7 +19,7 @@
 	min-height: 25vh;
 	position: relative;
 }
-.widgets__icon__container{
+.widgets__icon__container {
 	position: absolute;
 	right: 0;
 	top: 3%;
@@ -29,14 +28,14 @@
 	justify-content: center;
 	align-items: center;
 }
-.carousel__widget__icon{
+.carousel__widget__icon {
 }
-.loading__container{
-	color: #5F5F5F;
+.loading__container {
+	color: #5f5f5f;
 	padding: 5px;
-	margin:0 0.35rem;
+	margin: 0 0.35rem;
 	border-radius: 100%;
-	border: 1px solid #F3F3F3;;
+	border: 1px solid #f3f3f3;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -45,12 +44,12 @@
 	font-size: calc(1.3rem + 1vw);
 	width: calc(1.4rem + 1vw);
 }
-.loading__container__true{
-	color: #5F5F5F;
+.loading__container__true {
+	color: #5f5f5f;
 	padding: 5px;
-	margin:0 0.35rem;
+	margin: 0 0.35rem;
 	border-radius: 100%;
-	border: 1px solid #F3F3F3;;
+	border: 1px solid #f3f3f3;
 	background-color: var(--primary);
 	display: flex;
 	justify-content: center;
@@ -60,63 +59,70 @@
 	font-size: calc(1.3rem + 1vw);
 	width: calc(1.4rem + 1vw);
 }
-.loading__container:hover{
+.loading__container:hover {
 	color: #fff;
 	box-shadow: -1px 3px 22px rgba(173, 173, 173, 0.1);
 	border: 1px solid var(--primary);
 	background-color: var(--primary);
 }
-.footer{
+.footer {
 	padding: 1rem;
 	flex: 0.2;
 	border-bottom-left-radius: 8px;
 	border-bottom-right-radius: 8px;
-
 }
-.widget__icon{
-	font-size: 3rem;
-
+.widget__icon {
+	height: 10rem;
+	width: 10rem;
 }
-.widget__name{
-	color: #13272E;
+.widget__name {
+	color: #13272e;
 	font-weight: 600;
 	font-size: 1.1rem;
 }
-.widget__about{
+.widget__about {
 	font-size: 0.8rem;
 	color: rgba(19, 39, 46, 0.6);
 }
-.container:hover{
-	transform:scale(1.03);
+.container:hover {
+	transform: scale(1.03);
 	box-shadow: -1px 3px 43px rgba(173, 173, 173, 0.26);
 	color: var(--secondary);
 }
-.link{
+.link {
 	color: var(--primary);
 }
-.widget__info__header{
+.widget__info__header {
 	display: flex;
 	justify-content: space-between;
 }
-.tag{
+.tag {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.danger{
-	color: #FF4D4F;
+.danger {
+	color: #ff4d4f;
 }
 /* Safari */
 @-webkit-keyframes spin {
-	0% { -webkit-transform: rotate(0deg); }
-	100% { -webkit-transform: rotate(360deg); }
-  }
-  
-  @keyframes spin {
-	0% { transform: rotate(0deg); }
-	100% { transform: rotate(360deg); }
-  }
-.loader{
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.loader {
 	border: 6px solid #fff;
 	border-radius: 50%;
 	border-top: 6px solid var(--primary);
@@ -126,30 +132,29 @@
 	animation: spin 1s linear infinite;
 }
 
-.auth__modal{
+.auth__modal {
 	border-radius: 8px !important;
-	}
-	.auth__div {
-		padding: 1rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-	}
-	.auth__div button div {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		
-	}
-	
-	.auth__text {
-		color: var(--primary);
-		font-size: 1.5rem;
-		text-align: center;
-	}
+}
+.auth__div {
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.auth__div button div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.auth__text {
+	color: var(--primary);
+	font-size: 1.5rem;
+	text-align: center;
+}
 @media (max-width: 576px) {
-	.body{
+	.body {
 		min-height: 22vh;
 	}
 	.auth__text {
@@ -157,24 +162,24 @@
 		font-size: 1.25rem;
 		text-align: center;
 	}
-	.loading__container{
+	.loading__container {
 		height: calc(2.5rem + 1vw);
 		font-size: calc(1.3rem + 1vw);
 		width: calc(2.5rem + 1vw);
 	}
-	.loading__container__true{
+	.loading__container__true {
 		height: calc(2.5rem + 1vw);
 		font-size: calc(1.3rem + 1vw);
 		width: calc(2.5rem + 1vw);
 	}
-	.widget__icon{
-		font-size: 3.5rem;
-	
+	.widget__icon {
+		height: 20rem;
+		width: 20rem;
 	}
-	.widget__name{
+	.widget__name {
 		font-size: 1.2rem;
 	}
-	.widget__about{
+	.widget__about {
 		font-size: 1rem;
 	}
 }
