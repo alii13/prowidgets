@@ -173,8 +173,8 @@
 		width: calc(2.5rem + 1vw);
 	}
 	.widget__icon {
-		height: 20rem;
-		width: 20rem;
+		height: 10rem;
+		width: 10rem;
 	}
 	.widget__name {
 		font-size: 1.2rem;
