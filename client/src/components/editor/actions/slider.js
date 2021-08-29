@@ -66,7 +66,7 @@ export const removePhoto = (photoData) => (dispatch) => {
 	});
 };
 export const addPhoto = (photoData) => async (dispatch) => {
-	await fetch("https://api.cloudinary.com/v1_1/sliderso/image/upload", {
+	await fetch(`${process.env.REACT_APP_CLOUDINARY_URL}/image/upload`, {
 		method: "POST",
 		body: photoData,
 	})
@@ -84,24 +84,29 @@ export const saveCarousel = (carouselData) => async (dispatch) => {
 		type: REQUEST_SAVE_CAROUSEL,
 	});
 
-	return new Promise((resolve,reject)=>{
-		api.post("/v1/create-carousel", { 
-			carouselData
-		 },{
-			headers: { Authorization: `Bearer ${googleRes.tokenId}` }
-		 }).then((res) => {
-			console.log(res);
-			dispatch({
-				type: SUCCESS_SAVE_CAROUSEL,
-				payload: {url:carouselData.url},
+	return new Promise((resolve, reject) => {
+		api
+			.post(
+				"/v1/create-carousel",
+				{
+					carouselData,
+				},
+				{
+					headers: { Authorization: `Bearer ${googleRes.tokenId}` },
+				}
+			)
+			.then((res) => {
+				console.log(res);
+				dispatch({
+					type: SUCCESS_SAVE_CAROUSEL,
+					payload: { url: carouselData.url },
+				});
+				resolve(true);
+			})
+			.catch((err) => {
+				reject(err);
 			});
-			resolve(true);
-		}).catch((err)=>{
-			reject(err);
-		})
-
-	})
-
+	});
 };
 export const previewSlideBackgroundChange = (hexcode) => (dispatch) => {
 	dispatch({

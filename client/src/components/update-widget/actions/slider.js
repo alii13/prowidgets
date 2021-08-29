@@ -28,7 +28,6 @@ const networkRequestSuccess = (data, action_creator_constant) => {
 	};
 };
 
-
 export const changeSelectedSlider = (sliderData) => (dispatch) => {
 	dispatch({
 		type: CHANGE_SELECTED_SLIDER,
@@ -48,7 +47,7 @@ export const removePhoto = (photoData) => (dispatch) => {
 	});
 };
 export const addPhoto = (photoData) => async (dispatch) => {
-	await fetch("https://api.cloudinary.com/v1_1/sliderso/image/upload", {
+	await fetch(`${process.env.REACT_APP_CLOUDINARY_URL}/image/upload`, {
 		method: "POST",
 		body: photoData,
 	})
@@ -65,23 +64,28 @@ export const updateCarouselAndSave = (carouselData) => async (dispatch) => {
 	dispatch({
 		type: REQUEST_UPDATE_AND_SAVE_CAROUSEL,
 	});
-	return new Promise((resolve,reject)=>{
-		 api.post("/v1/update-carousel", { 
-			carouselData
-		 },{
-			headers: { Authorization: `Bearer ${googleRes.tokenId}` }
-		 }).then((res) => {
-			console.log(res,"update");
-			dispatch({
-				type: SUCCESS_UPDATE_AND_SAVE_CAROUSEL,
+	return new Promise((resolve, reject) => {
+		api
+			.post(
+				"/v1/update-carousel",
+				{
+					carouselData,
+				},
+				{
+					headers: { Authorization: `Bearer ${googleRes.tokenId}` },
+				}
+			)
+			.then((res) => {
+				console.log(res, "update");
+				dispatch({
+					type: SUCCESS_UPDATE_AND_SAVE_CAROUSEL,
+				});
+				resolve(true);
+			})
+			.catch((err) => {
+				reject(err);
 			});
-			resolve(true);
-		}).catch((err)=>{
-			reject(err);
-		})
-
-	})
-
+	});
 };
 export const previewSlideBackgroundChange = (hexcode) => (dispatch) => {
 	dispatch({

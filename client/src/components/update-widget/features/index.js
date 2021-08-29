@@ -13,11 +13,12 @@ import {
 	previewSlideBackgroundChange,
 	animationSpeedChange,
 	imageOrienationChange,
-	onBulletToggle,photoListChange,photoUploadSuccessfully,
+	onBulletToggle,
+	photoListChange,
+	photoUploadSuccessfully,
 	onArrowToggle,
 } from "../actions/slider";
-import axios from 'axios'
-
+import axios from "axios";
 
 const { Option } = Select;
 
@@ -59,47 +60,45 @@ class index extends Component {
 		this.setState({
 			previewImage: file.url || file.preview,
 			previewVisible: true,
-			previewTitle:
-				file.name || file.url.substring(file.url.lastIndexOf("/") + 1),
+			previewTitle: file.name || file.url.substring(file.url.lastIndexOf("/") + 1),
 		});
 	};
 
-	upload = async(options) => {
+	upload = async (options) => {
 		const { onSuccess, onError, file, onProgress } = options;
 		const data = new FormData();
-		data.append('file',file);
-		data.append('upload_preset','sliderso');
+		data.append("file", file);
+		data.append("upload_preset", "sliderso");
 
 		const config = {
-		  headers: { "content-type": "multipart/form-data" },
-		  onUploadProgress: event => {
-				  const percent = Math.floor((event.loaded / event.total) * 100);
-				  if (percent < 99) {
-					  console.log(percent)
-				  onProgress({ percent});
-		  }
-		}
+			headers: { "content-type": "multipart/form-data" },
+			onUploadProgress: (event) => {
+				const percent = Math.floor((event.loaded / event.total) * 100);
+				if (percent < 99) {
+					console.log(percent);
+					onProgress({ percent });
+				}
+			},
 		};
 
 		try {
-		  const res = await axios.post(
-			"https://api.cloudinary.com/v1_1/sliderso/image/upload",
-			data,
-			config
-		  );
-		  onSuccess("ok");
-		  this.props.photoUploadSuccessfully(res.data);
+			const res = await axios.post(
+				`${process.env.REACT_APP_CLOUDINARY_URL}/image/upload`,
+				data,
+				config
+			);
+			onSuccess("ok");
+			this.props.photoUploadSuccessfully(res.data);
 		} catch (err) {
-		  console.log("Eroor: ", err);
-		  onError({ err });
+			console.log("Eroor: ", err);
+			onError({ err });
 		}
-
 	};
 
 	handleChange = (e) => {
 		const { fileList } = e;
-		console.log(fileList[fileList.length-1].percent,"onchange")
-		this.props.photoListChange(fileList)
+		console.log(fileList[fileList.length - 1].percent, "onchange");
+		this.props.photoListChange(fileList);
 	};
 	removePhoto = (photo) => {
 		console.log(photo);
@@ -126,8 +125,7 @@ class index extends Component {
 							onPreview={this.handlePreview}
 							customRequest={this.upload}
 							onChange={this.handleChange}
-							onRemove={this.removePhoto}
-						>
+							onRemove={this.removePhoto}>
 							{this.props.photos.length >= 8 ? null : (
 								<div className={styles.add__image__btn}>
 									<GrFormAdd className={styles.add__image__icon} />
@@ -138,39 +136,38 @@ class index extends Component {
 							visible={previewVisible}
 							title={previewTitle}
 							footer={null}
-							onCancel={this.handleCancel}
-						>
+							onCancel={this.handleCancel}>
 							<img alt="example" style={{ width: "100%" }} src={previewImage} />
 						</Modal>
 					</div>
 				</div>
 
 				<div className={styles.feature__lablel__container}>
-					<p className={styles.feature__label} style={!this.props.bullteState?{color:"#9d9d9d"}:{color:"var(--primary)"}}>
-					Show Bullets
-
+					<p
+						className={styles.feature__label}
+						style={!this.props.bullteState ? { color: "#9d9d9d" } : { color: "var(--primary)" }}>
+						Show Bullets
 						<Switch
 							onChange={this.props.onBulletToggle}
 							className={styles.toggle__switch}
 							checked={this.props.bullteState}
 						/>
 					</p>
-					<div className={styles.feature__linear__animation__body}>
-					</div>
+					<div className={styles.feature__linear__animation__body}></div>
 				</div>
 
 				<div className={styles.feature__lablel__container}>
-					<p className={styles.feature__label} style={!this.props.arrowState?{color:"#9d9d9d"}:{color:"var(--primary)"}}>
+					<p
+						className={styles.feature__label}
+						style={!this.props.arrowState ? { color: "#9d9d9d" } : { color: "var(--primary)" }}>
 						Show Navigation Arrows
-
 						<Switch
 							onChange={this.props.onArrowToggle}
 							className={styles.toggle__switch}
 							checked={this.props.arrowState}
 						/>
 					</p>
-					<div className={styles.feature__linear__animation__body}>
-					</div>
+					<div className={styles.feature__linear__animation__body}></div>
 				</div>
 
 				<div className={styles.feature__lablel__container}>
@@ -186,14 +183,13 @@ class index extends Component {
 								backgroundColor: "#F3F3F3",
 								borderRadius: "8px",
 							}}
-							className={styles.orienation}
-						>
+							className={styles.orienation}>
 							<Option value="contain">Contain</Option>
 							<Option value="cover">Cover ( Fit to parent )</Option>
 						</Select>
 					</div>
 				</div>
-				
+
 				{/* <div className={styles.feature__lablel__container}>
 					<p className={styles.feature__label}>
 						Animation Speed ( {this.props.animationSpeed} ms )
@@ -214,9 +210,7 @@ class index extends Component {
 					<p className={styles.feature__label}>Background Color</p>
 					<div className={styles.feature__linear__color__body}>
 						<p className={styles.color__name}>{this.props.previewSlideColor}</p>
-						<ClickOutHandler
-							onClickOut={() => this.setState({ showColorPicker: false })}
-						>
+						<ClickOutHandler onClickOut={() => this.setState({ showColorPicker: false })}>
 							<div
 								className={styles.color__picker__block}
 								style={{
@@ -227,8 +221,7 @@ class index extends Component {
 									this.setState({
 										showColorPicker: !this.state.showColorPicker,
 									})
-								}
-							>
+								}>
 								{this.state.showColorPicker ? (
 									<SketchPicker
 										color={this.props.previewSlideColor}
@@ -265,11 +258,9 @@ const mapDispatchToProps = (dispatch) => {
 		onRedo: () => dispatch(UndoActionCreators.redo()),
 		removePhoto: (photoData) => dispatch(removePhoto(photoData)),
 		addPhoto: (photoData) => dispatch(addPhoto(photoData)),
-		previewSlideBackgroundChange: (hexColor) =>
-			dispatch(previewSlideBackgroundChange(hexColor)),
+		previewSlideBackgroundChange: (hexColor) => dispatch(previewSlideBackgroundChange(hexColor)),
 		animationSpeedChange: (speed) => dispatch(animationSpeedChange(speed)),
-		imageOrienationChange: (type) =>
-			dispatch(imageOrienationChange(type)),
+		imageOrienationChange: (type) => dispatch(imageOrienationChange(type)),
 		onBulletToggle: (state) => dispatch(onBulletToggle(state)),
 		onArrowToggle: (state) => dispatch(onArrowToggle(state)),
 		photoListChange: (state) => dispatch(photoListChange(state)),
