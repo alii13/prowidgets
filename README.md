@@ -78,8 +78,8 @@ property of the provided object and put it inside of the .env file like this:
 
 ```
 REACT_APP_GOOGLE_CLIENT_ID=
-REACT_APP_DOMAIN=https://prowidgets.co/
-REACT_APP_CLOUDINARY_URL= https://api.cloudinary.com/v1_1/sliderso
+REACT_APP_DOMAIN=http://localhost:3000/
+REACT_APP_CLOUDINARY_URL= 
  
 ```
 For setting 
